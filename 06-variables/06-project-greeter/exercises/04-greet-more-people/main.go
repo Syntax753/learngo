@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Greet More People
 //
@@ -29,6 +34,23 @@ package main
 
 func main() {
 	// TYPE YOUR CODE HERE
+
+	if len(os.Args) < 4 {
+		panic("Not enough people. Need at least 3")
+	}
+
+	var (
+		l  = len(os.Args) - 1
+		p1 = os.Args[1]
+		p2 = os.Args[2]
+		p3 = os.Args[3]
+	)
+
+	fmt.Println("There are", l, "people!")
+	fmt.Println("Hello great", p1, "!")
+	fmt.Println("Hello great", p2, "!")
+	fmt.Println("Hello great", p3, "!")
+	fmt.Println("Nice to meet you all.")
 
 	// BONUS #1:
 	// Observe the error if you pass less then 3 arguments.
